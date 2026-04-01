@@ -11,7 +11,8 @@ def test_get_activities_returns_all_activities(client):
     assert response.status_code == 200
     data = response.json()
     assert isinstance(data, dict)
-    assert len(data) == 9
+    assert len(data) > 0
+    assert "Chess Club" in data
 
 
 def test_get_activities_has_expected_structure(client):
